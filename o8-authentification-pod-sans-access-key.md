@@ -123,7 +123,7 @@ Sur AKS, les composants 1 à 4 de la section 3 sont **fournis et gérés par la 
 ```bash
 az aks update -g <rg> -n <cluster> --enable-oidc-issuer --enable-workload-identity
 az aks show  -g <rg> -n <cluster> --query "oidcIssuerProfile.issuerUrl" -o tsv
-# ex. https://francecentral.oic.prod-aks.azure.com/<tenant-id>/<uuid>/
+# ex. https://<region>.oic.prod-aks.azure.com/<tenant-id>/<uuid>/
 ```
 
 Pour les clusters AKS Standard **créés** en Kubernetes 1.34 ou plus, l'issuer OIDC est activé par défaut. Une fois activé, il ne peut plus être désactivé ([documentation OIDC issuer](https://learn.microsoft.com/azure/aks/use-oidc-issuer)). C'est le cas du cluster du TP, créé en 1.35 : `oidcIssuerProfile.enabled` vaut `true` sans qu'on l'ait demandé. Le webhook Workload ID, lui, n'est pas activé (`securityProfile.workloadIdentity` vaut `null`). Sans federated credential, cet issuer ne donne accès à rien dans Azure.
