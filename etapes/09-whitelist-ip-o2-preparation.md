@@ -43,4 +43,8 @@ az aks update -g msaidiRG -n tp-aks-sec-cluster --api-server-authorized-ip-range
 az aks update -g msaidiRG -n tp-aks-sec-cluster --api-server-authorized-ip-ranges <plage>,108.141.95.52/32
 ```
 
-- Le refus d'accès depuis une IP hors liste n'est pas testé.
+- Depuis une IP hors de la liste, `kubectl get ns` n'aboutit pas :
+
+```text
+Unable to connect to the server: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+```
