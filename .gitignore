@@ -1,0 +1,17 @@
+# Identifiants et fichiers sensibles, jamais versionnés
+kubeconfig*
+*.kubeconfig
+.kube/
+config
+*token*
+*.pem
+*.key
+*.crt
+*.pfx
+.env
+.env.*
+secrets/
+*.secret.yaml
+
+.worker-out/
+.kcfg-tp
