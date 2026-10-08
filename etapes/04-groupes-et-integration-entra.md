@@ -41,6 +41,6 @@ Groupes :
 - `tp-aks-sec-admins` (`05d2df4d-aa8c-4e6f-918d-d5bb0e99ed71`) : `msaidi.ext@simplonformations.co`.
 - `tp-aks-sec-readers` (`58f3f205-00e1-42ed-9082-4caa698ebd5b`) : `stheval@simplonformations.co`.
 
-Avant les assignations de l'étape 5, un `kubectl get namespaces` avec le kubeconfig Entra renvoie `Forbidden` : l'utilisateur est authentifié, aucun rôle ne l'autorise encore.
+Sans assignation de rôle (étape 5), un `kubectl get namespaces` avec le kubeconfig Entra renvoie `Forbidden` : l'utilisateur est authentifié, mais aucun rôle ne l'autorise.
 
 Kubernetes RBAC reste actif (`enableRbac: true`). Les `RoleBinding` et `ClusterRoleBinding` du cluster sont à auditer séparément des rôles Azure.

@@ -25,9 +25,16 @@ Simulation de l'application avec une plage de documentation (RFC 5737), sans éc
 
 ## Résultat
 
-- `apiServerAccessProfile` vaut `null` : aucune plage n'est autorisée, le serveur d'API `tp-aks-sec-msaidirg-5e683e-03y6zbip.hcp.westeurope.azmk8s.io` reste joignable depuis tout Internet.
-- Type de sortie `loadBalancer`, IP de sortie du cluster `108.141.95.52`.
-- Le dry-run affiche les deux mises à jour prévues, dans cet ordre :
+Le serveur d'API `tp-aks-sec-msaidirg-5e683e-03y6zbip.hcp.westeurope.azmk8s.io` n'accepte que les plages autorisées. `az aks show` renvoie :
+
+```json
+{ "prov": "Succeeded", "ranges": ["86.201.70.133/32"] }
+```
+
+- La seule plage autorisée est `86.201.70.133/32`, l'IP publique du poste d'administration.
+- `kubectl get ns` avec le kubeconfig Entra réussit depuis ce poste.
+- Le type de sortie du cluster est `loadBalancer`, avec l'IP de sortie `108.141.95.52`, qui ne figure pas dans la liste autorisée.
+- Le dry-run du script affiche les deux mises à jour prévues, dans cet ordre :
 
 ```text
 Étape 5, phase 1 : plage + IP de sortie + IP courante temporaire
@@ -36,4 +43,4 @@ az aks update -g msaidiRG -n tp-aks-sec-cluster --api-server-authorized-ip-range
 az aks update -g msaidiRG -n tp-aks-sec-cluster --api-server-authorized-ip-ranges <plage>,108.141.95.52/32
 ```
 
-- La restriction n'est pas appliquée sur le cluster : la plage des locaux Simplon n'a pas été fournie. Le test d'accès depuis une IP extérieure n'a donc pas été fait.
+- Le refus d'accès depuis une IP hors liste n'est pas testé.

@@ -29,4 +29,4 @@ az vm list-skus -l westeurope --resource-type virtualMachines
 - `allowedToCreateSecurityGroups = true` : l'utilisateur peut créer des groupes de sécurité et en devient propriétaire.
 - À la portée de l'abonnement, l'utilisateur n'a pas `Microsoft.Resources/subscriptions/resourceGroups/write`. Le cluster est donc créé dans le groupe de ressources existant `msaidiRG`.
 - `managedClusters/write` est couvert par `Owner` sur `msaidiRG`. `roleAssignments/write` sur le cluster est couvert par `Role Based Access Control Administrator`.
-- Tailles de VM sans restriction dans `westeurope` avec au moins 2 vCPU et 4 Go : `Standard_D2als_v7`, `Standard_D2alds_v7`, `Standard_F2als_v7`, `Standard_F2alds_v7`. Les policies de l'organisation refusent ensuite plusieurs de ces tailles (voir l'étape 2).
+- Tailles de VM sans restriction dans `westeurope` avec au moins 2 vCPU et 4 Go : `Standard_D2als_v7`, `Standard_D2alds_v7`, `Standard_F2als_v7`, `Standard_F2alds_v7`.

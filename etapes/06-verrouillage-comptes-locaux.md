@@ -28,4 +28,4 @@ Message: Getting static credential is not allowed because this cluster is set to
 
 `kubectl get ns` avec le kubeconfig Entra réussit toujours après la désactivation.
 
-La rotation des certificats (`az aks rotate-certs`) n'a pas été exécutée. Un certificat admin téléchargé avant la désactivation n'est pas révoqué par cette commande.
+La rotation des certificats (`az aks rotate-certs`) n'est pas effectuée. Un certificat admin téléchargé avant la désactivation n'est pas révoqué par `--disable-local-accounts`.

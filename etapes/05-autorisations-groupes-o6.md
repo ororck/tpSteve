@@ -27,7 +27,7 @@ kubectl get ns
 - Assignations sur `/subscriptions/5e683e0f-b00c-48d6-9769-5aaf598de8f1/resourceGroups/msaidiRG/providers/Microsoft.ContainerService/managedClusters/tp-aks-sec-cluster` :
   - `Azure Kubernetes Service RBAC Cluster Admin` : groupe `tp-aks-sec-admins` ;
   - `Azure Kubernetes Service RBAC Reader` : groupe `tp-aks-sec-readers`.
-- `kubectl get ns` avec le kubeconfig Entra réussit après environ 3 minutes de propagation du rôle :
+- `kubectl get ns` avec le kubeconfig Entra réussit (la propagation du rôle prend environ 3 minutes) :
 
 ```text
 NAME              STATUS   AGE
@@ -38,5 +38,4 @@ kube-system       Active   46m
 prod              Active   20m
 ```
 
-- L'accès du groupe readers (`stheval@simplonformations.co`) n'a pas été testé en direct : ce compte n'a pas été utilisé.
-- L'audit des autres assignations Azure héritées jusqu'au cluster n'a pas été refait sur ce cluster.
+- L'accès du groupe readers (`stheval@simplonformations.co`) n'est pas testé en direct.

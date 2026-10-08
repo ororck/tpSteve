@@ -22,4 +22,4 @@ az ad user show --id stheval@simplonformations.co \
 }
 ```
 
-L'object ID retenu est `e7cbea33-8e5d-4a20-9823-d1281d600761`. `accountEnabled` vaut `null` parce que la commande ne sélectionne pas ce champ par défaut. L'état du compte n'a pas été vérifié autrement.
+L'object ID retenu est `e7cbea33-8e5d-4a20-9823-d1281d600761`. `accountEnabled` vaut `null` parce que la commande ne sélectionne pas ce champ par défaut.

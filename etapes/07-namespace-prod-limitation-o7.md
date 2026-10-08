@@ -39,5 +39,3 @@ Container   memory    128Mi            256Mi
 ```
 
 Le pod `test-sans-requests` est `Running` dans `prod` et consomme 100m de CPU et 128Mi de requests, soit les valeurs par défaut du LimitRange : le LimitRange injecte bien les ressources manquantes.
-
-Le rejet d'un pod sans ressources lorsque le quota est appliqué seul (sans LimitRange) n'a pas été rejoué sur ce cluster.

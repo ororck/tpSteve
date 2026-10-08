@@ -32,4 +32,4 @@ Exécution en simulation sur le cluster :
 Étape 5, phase 2 : retrait de l'IP courante
 ```
 
-Le script ne rejoue que ce qui manque, et les écritures sont seulement affichées en `--dry-run`. Le linter `shellcheck` n'a pas été exécuté (non installé sur le poste). Seule une vérification de syntaxe `bash -n` a été faite.
+Le script ne rejoue que ce qui manque, et les écritures sont seulement affichées en `--dry-run`. Le script est vérifié par `bash -n` (syntaxe). Le linter `shellcheck` n'est pas exécuté (non installé sur le poste).
